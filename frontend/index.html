@@ -6,12 +6,24 @@
 <body>
   <div id="header">
     <h1> Git<b class="color-blue">Scribe</b> </h1>
-    <p class="color-grey"> Focus on your <b class="color-pink">code</b>. Let us <b class="color-blue">describe</b> them</p>
+    <p class="color-grey"> Focus on your <b class="color-pink">Code</b>. Let us <b class="color-blue">describe</b> them</p>
   </div>
   <div id="content">
-    <div id="controll-buttons"></div>
-    <button id="btn" class="btn">Auto Commit</button>
-    <button id="btn" class="btn">Try manually</button>
+    <div id="controll-buttons">
+      <button class="auto">Auto Commit</button>
+      <button class="manually">Try manually</button>
+    </div>
+
+    <div class="data-block">
+      <div class="data-block-header">
+        <h2>Input </h2> 
+      </div>
+      <div class="data-block-content">
+        <div class="data-block-content-text">
+          <label for="input">Branch</label>
+          <textarea id="input" placeholder="Enter your code here"></textarea>
+        </div>
+    </div>
 
   </div>
   
