@@ -10,21 +10,52 @@
   </div>
   <div id="content">
     <div id="controll-buttons">
-      <button class="auto">Auto Commit</button>
+      <button class="auto">Get Commits from Github <img src="icons/magic-wand.svg"/></button>
       <button class="manually">Try manually</button>
     </div>
 
     <div class="data-block">
       <div class="data-block-header">
-        <h2>Input </h2> 
+        <h2>Inputs</h2> <img src="icons/arrow-right.png"> 
       </div>
       <div class="data-block-content">
-        <div class="data-block-content-text">
-          <label for="input">Branch</label>
-          <textarea id="input" placeholder="Enter your code here"></textarea>
+        <div class="data-block-content-input">
+          <label for="branch">Branch</label>
+          <input id="branch" placeholder="Enter your branch name here"></textarea>
         </div>
+        <div class="data-block-content-input">
+          <label for="commits">Commits / Description</label>
+          <textarea id="commits" placeholder="Enter your commits here"></textarea>
+        </div>
+      </div>
     </div>
 
+    <button class="generate-button"><p>Generate</p> <img src="icons/star.svg"/></button>
+    
+    <div class="data-block">
+      <div class="data-block-header">
+        <h2>Output</h2> <img src="icons/arrow-right.png"> 
+      </div>
+      <div class="data-block-content">
+        <div class="data-block-content-input">
+          <label for="branch">Title</label>
+          <p class="commits-title">ENR-530 - Edited bugs in code review llows: 1</p>
+          <!-- <textarea id="branch" placeholder="Enter your branch name here" value="ENR-530 - Edited bugs in code review llows: asdf asdf asdf asdf a sdf " disabled/> -->
+          <button class="copy-button"><p>copy</p> <img src="icons/copy-icon.svg" alt="copiar"></button>
+          
+        </div>
+        <div class="data-block-content-input">
+          <label for="commits">Description</label>
+          <p class="commits-description">
+            Changes made in this branch are as follows: asdf asdf asdf asdf asd f
+            <span>1. Added new feature</span>
+            <span>2. Fixed bug</span>
+          </p>
+          <button class="copy-button"><p>copy</p> <img src="icons/copy-icon.svg" alt="copiar"></button>
+          <!-- <textarea id="commits" placeholder="Enter your commits here"></textarea> -->
+        </div>
+      </div>
+    </div>
   </div>
   
 

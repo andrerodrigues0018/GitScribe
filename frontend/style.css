@@ -97,24 +97,162 @@ body{
 
 #content #controll-buttons{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 #content #controll-buttons button{
   background: #5985E4;
   border-radius: 5px;;
   border: none;
-  width: 174px;
+  width: 354px;
   height: 53px;
   color: white;
   font-family: Prompt-Bold;
   font-size: 1rem;
   padding: 10px 20px;
+  margin-top: 15px;;
   margin-right: 10px;
   cursor: pointer;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
   border:1px solid #5985E4;
+}
+
+#controll-buttons button img{
+  width: 20px;
 }
 
 #content #controll-buttons button.manually{
   background: transparent;
+}
+
+.data-block{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 10px;;
+}
+
+.data-block-header{
+  display: flex;
+  flex-direction: row;
+  color: white;
+  gap: 5px;
+  align-items: center;
+}
+
+.data-block-header img{
+  width: 7px;
+  margin-top: 4px;
+}
+
+.data-block-header h2{
+  font-size: 1rem;
+}
+.data-block-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1px;
+}
+
+.data-block-content-input{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #0f0f0f;
+  width: 90%;
+  padding-left: 15px;
+}
+
+.data-block-content-input label{
+  color: #949494;
+  font-family: Prompt-Light;
+  font-size: 1rem;
+  margin-top: 8px;
+}
+
+.data-block-content-input textarea, input{
+  background: transparent;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-family: Prompt-Medium;
+  font-size: 0.8125rem;
+  resize: auto;
+  outline: none;
+  min-height: 40px;
+  padding-bottom: 10px;
+}
+
+.data-block-content-input textarea{
+  min-height: 100px;
+}
+
+button.generate-button{
+  background: #5985E4;
+  border-radius: 5px;;
+  border: none;
+  width: 145px;
+  height: 42px;
+  color: white;
+  font-family: Prompt-Bold;
+  font-size: 1rem;
+  margin-top: 10px;
+  cursor: pointer;
+  gap: 10px;
+  border:1px solid #5985E4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.generate-button img{
+  width: 20px;
+}
+
+.generate-button:hover{
+  background: #6391f3;
+  border: 1px solid #6391f3;
+}
+
+p.commits-description{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 10px;
+  color: #fff;
+  font-size: 0.875rem;
+}
+
+p.commits-title{
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  font-family: Prompt-Medium;
+  width: 98%;
+  font-size: 1rem;
+}
+
+.copy-button{
+  background: none;
+  border: none;
+  outline: none;
+  justify-self: flex-end;
+  align-self: flex-end;
+  padding:0 10px;
+  margin-top: -15px;
+  cursor: pointer;
+  color:white;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 5px;
+}
+
+.copy-button:hover{
+  background: #212121;
+  border-radius: 5px;
 }
