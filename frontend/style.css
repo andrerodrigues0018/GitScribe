@@ -1,0 +1,88 @@
+
+
+@font-face {
+  font-family: 'Prompt-Black';
+  src: url('./fonts/Prompt-Black.ttf') format('truetype');
+  font-weight: bolder;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Prompt-Bold';
+  src: url('./fonts/Prompt-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Prompt-Medium';
+  src: url('./fonts/Prompt-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Prompt-Regular';
+  src: url('./fonts/Prompt-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Prompt-Light';
+  src: url('./fonts/Prompt-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Prompt-Thin';
+  src: url('./fonts/Prompt-Thin.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+*{
+  color:rgb(227, 227, 227);
+  font-family: 'Prompt-Regular', monospace;
+}
+
+
+body{
+  background: #212121;
+  margin:0;
+}
+
+#header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 21px;
+  margin-left: 24px;
+}
+#header h1{
+  font-family: Prompt-Bold;
+  font-size: 2.5rem;
+  margin:0;
+}
+
+#header p{
+  margin:0;
+  margin-top: 5px;
+  font-family: Prompt-Light;
+  font-size: 1rem;
+}
+
+.color-grey{
+  color: #BCBCBC;
+}
+.color-pink{
+  color: #FB027A
+}
+
+.color-blue{
+  color: #5985E4;
+}
