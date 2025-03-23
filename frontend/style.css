@@ -104,12 +104,12 @@ body{
   background: #5985E4;
   border-radius: 5px;;
   border: none;
-  width: 354px;
+  width: 92%;
   height: 53px;
   color: white;
   font-family: Prompt-Bold;
   font-size: 1rem;
-  padding: 10px 20px;
+  padding: 15px 20px;
   margin-top: 15px;;
   margin-right: 10px;
   cursor: pointer;
