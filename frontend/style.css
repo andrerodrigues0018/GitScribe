@@ -238,11 +238,14 @@ p.commits-title{
 
 .copy-button{
   background: none;
-  border: none;
+  border: 1px solid #333;
+  border-radius: 5px;
   outline: none;
   justify-self: flex-end;
   align-self: flex-end;
+  height: 35px;
   padding:0 10px;
+  margin:7px;
   margin-top: -15px;
   cursor: pointer;
   color:white;
@@ -255,4 +258,23 @@ p.commits-title{
 .copy-button:hover{
   background: #212121;
   border-radius: 5px;
+}
+
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.generate-button[disabled]{
+  background: #2550ac;
+  border: 1px solid #5985E4;
+  cursor: not-allowed;
+}
+.generate-button[disabled] .generate-button-icon{
+  animation: rotate 1.5s linear infinite;
 }

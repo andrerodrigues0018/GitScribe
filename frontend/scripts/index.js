@@ -1,24 +1,33 @@
-// const button = document.querySelector('.button-enviar');
-// const userStoryName = document.querySelector('input');
-// const description = document.querySelector('textarea');
-// const tituloRenderizada = document.querySelector('.titulo-renderizada');
-// const respostaRenderizada = document.querySelector('.resposta-renderizada');
-const buttonCopyCommits = document.querySelector(".button-copy-commits");
 
-// button.addEventListener('click', processRequest);
-// tituloRenderizada.addEventListener('click', copyTitle)
-// respostaRenderizada.addEventListener('click', copyDescription)
+
+const buttonCopyCommits = document.querySelector(".button-copy-commits");
+const branchTextarea = document.getElementById("branch");
+const commitsTextarea = document.getElementById("commits");
+
+const generateButton = document.querySelector('.generate-button');
+const generateButtonText = document.querySelector('.generate-button p');
+const generateButtonIcon = document.querySelector('.generate-button img');
+
+const commitsTitle = document.querySelector('.commits-title');
+const commitsDescription = document.querySelector('.commits-description');
+
+const boxOutputTitle = document.querySelector('.output-title');
+const boxOutputDescription = document.querySelector('.output-description');
+
+generateButton.addEventListener('click', processRequest);
 buttonCopyCommits.addEventListener("click", getCommits);
+boxOutputTitle.addEventListener('click', copyTitle)
+boxOutputDescription.addEventListener('click', copyDescription)
 var markdown = "";
 function processRequest() {
-    button.disabled = true;
-    button.textContent = "Carregando...";
+    generateButton.disabled = true;
+    generateButtonText.innerHTML = "Thinking";
     fetch("https://cloudflare-works.andre-rodrigues0018.workers.dev/gemini/pr", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-            userStoryName: userStoryName.value,
-            description: description.value,
+            userStoryName: branchTextarea.value,
+            description: commitsTextarea.value,
         }),
     })
         .then((response) => response.json())
@@ -26,11 +35,10 @@ function processRequest() {
             if (data.markdown && data.title) {
                 markdown = data.markdown;
                 const htmlContent = markdownToHtml(markdown);
-                respostaRenderizada.innerHTML = htmlContent;
-                tituloRenderizada.innerHTML = data.title;
-                button.disabled = false;
-                button.textContent = "Gerar Descrição";
-                alert("Gerada descrição do PR com sucesso!");
+                commitsDescription.innerHTML = htmlContent;
+                commitsTitle.innerHTML = data.title;
+                generateButton.disabled = false;
+                generateButtonText.innerHTML = "Generate";
             } else {
                 processRequest();
             }
@@ -109,9 +117,9 @@ function markdownToHtml(markdownText) {
 }
 
 function copyText(element) {
-    var textoParaCopiar = markdown;
+    var textoParaCopiar = commitsDescription.textContent;
     if (element == "titulo") {
-        textoParaCopiar = tituloRenderizada.textContent;
+        textoParaCopiar = commitsTitle.textContent;
     }
     const tempElem = document.createElement("textarea");
     tempElem.textContent = textoParaCopiar;
@@ -119,7 +127,6 @@ function copyText(element) {
     tempElem.select();
     document.execCommand("copy");
     document.body.removeChild(tempElem);
-    alert("Texto copiado com sucesso!");
 }
 
 function copyTitle() {
@@ -136,8 +143,6 @@ function getCommits() {
 
 window.addEventListener("message", (event) => {
     if (event.data.action === "updateTexts") {
-        const commitsTextarea = document.getElementById("commits");
-        const branchTextarea = document.getElementById("branch");
         const commitsContent = event.data.data.commits.join("\n");
         const branchContent = event.data.data.branch;
         commitsTextarea.value = commitsContent;

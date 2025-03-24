@@ -31,27 +31,24 @@
     </div>
 
 
-    <button class="generate-button"><p>Generate</p> <img src="icons/star.svg"/></button>
+    <button class="generate-button"><p class="generate-button-text">Thinking</p> <img src="icons/star.svg" class="generate-button-icon"/></button>
     
     <div class="data-block">
       <div class="data-block-header">
         <h2>Output</h2> <img src="icons/arrow-right.png"> 
       </div>
       <div class="data-block-content">
-        <div class="data-block-content-input">
-          <label for="branch">Title</label>
-          <p class="commits-title">ENR-530 - Edited bugs in code review llows: 1</p>
-          <button class="copy-button"><p>copy</p> <img src="icons/copy-icon.svg" alt="copiar"></button>
+        <div class="data-block-content-input output-title">
+          <label>Title</label>
+          <p class="commits-title"> - </p>
+          <button class="copy-button" id="copy-description"><p>copy</p> <img src="icons/copy-icon.svg" alt="copiar"></button>
           
         </div>
-        <div class="data-block-content-input">
-          <label for="commits">Description</label>
-          <p class="commits-description">
-            Changes made in this branch are as follows: asdf asdf asdf asdf asd f
-            <span>1. Added new feature</span>
-            <span>2. Fixed bug</span>
+        <div class="data-block-content-input output-description">
+          <label>Description</label>
+          <p class="commits-description" aria-disabled="true"> -
           </p>
-          <button class="copy-button"><p>copy</p> <img src="icons/copy-icon.svg" alt="copiar"></button>
+          <button class="copy-button" id="copy-description"><p>copy</p> <img src="icons/copy-icon.svg" alt="copiar"></button>
         </div>
       </div>
     </div>
