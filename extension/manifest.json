@@ -2,7 +2,7 @@
     "name": "GitScribe - AI Powered PR Descriptions",
     "version": "1.0.0",
     "manifest_version": 3,
-    "description": "GitScribe is a tool that uses AI to automatically generate titles and descriptions for Pull Requests based on commit messages. It streamlines the PR creation process, saving time and ensuring consistency in descriptions.",
+    "description": "GitScribe is a tool that uses AI to automatically generate titles and descriptions for Pull Requests based on commit messages.",
     "permissions": [
         "activeTab",
         "scripting",
