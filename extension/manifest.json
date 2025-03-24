@@ -1,0 +1,25 @@
+{
+  "name": "Captura de Commits do GitHub",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "description": "Captura os commits de um Pull Request no GitHub.",
+  "permissions": [
+      "activeTab",
+      "scripting",
+      "tabs",
+      "sidePanel"
+
+  ],
+  "host_permissions": [
+      "https://github.com/*"
+  ],
+  "background": {
+      "service_worker": "background.js"
+  },
+  "side_panel": {
+      "default_path": "index.html"
+  },
+  "action": {
+      "default_popup": "index.html"
+  }
+}
