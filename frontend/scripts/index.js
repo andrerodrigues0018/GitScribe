@@ -137,7 +137,10 @@ function getCommits() {
 window.addEventListener("message", (event) => {
     if (event.data.action === "updateTexts") {
         const commitsTextarea = document.getElementById("commits");
-        const textContent = event.data.data.join("\n");
-        commitsTextarea.value = textContent;
+        const branchTextarea = document.getElementById("branch");
+        const commitsContent = event.data.data.commits.join("\n");
+        const branchContent = event.data.data.branch;
+        commitsTextarea.value = commitsContent;
+        branchTextarea.value = branchContent;
     }
 });
