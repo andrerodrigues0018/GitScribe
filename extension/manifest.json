@@ -1,25 +1,26 @@
 {
-  "name": "Captura de Commits do GitHub",
-  "version": "1.0.0",
-  "manifest_version": 3,
-  "description": "Captura os commits de um Pull Request no GitHub.",
-  "permissions": [
-      "activeTab",
-      "scripting",
-      "tabs",
-      "sidePanel"
-
-  ],
-  "host_permissions": [
-      "https://github.com/*"
-  ],
-  "background": {
-      "service_worker": "background.js"
-  },
-  "side_panel": {
-      "default_path": "index.html"
-  },
-  "action": {
-      "default_popup": "index.html"
-  }
+    "name": "GitScribe - AI Powered PR Descriptions",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "description": "GitScribe is a tool that uses AI to automatically generate titles and descriptions for Pull Requests based on commit messages. It streamlines the PR creation process, saving time and ensuring consistency in descriptions.",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "tabs",
+        "sidePanel"
+    ],
+    "icons": {
+        "16": "16x16.png",
+        "32": "32x32.png",
+        "48": "48x48.png"
+    },
+    "host_permissions": [
+        "https://github.com/*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "side_panel": {
+        "default_path": "index.html"
+    }
 }
