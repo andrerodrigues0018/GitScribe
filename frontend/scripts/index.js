@@ -25,7 +25,7 @@ var markdown = "";
 function processRequest() {
     generateButton.disabled = true;
     generateButtonText.innerHTML = "Thinking";
-    fetch("http://127.0.0.1:8787/gemini/pr", {
+    fetch("https://gitscribe.andre-rodrigues0018.workers.dev/gemini/pr", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
