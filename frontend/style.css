@@ -260,6 +260,19 @@ p.commits-title{
   border-radius: 5px;
 }
 
+.output-block{
+  display: none;
+  cursor: pointer;
+}
+
+.output-block .data-block-content-input:hover{
+  filter: brightness(1.2);
+}
+
+.output-block.active {
+  display: block;
+}
+
 
 @keyframes rotate {
   from {
