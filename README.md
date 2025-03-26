@@ -2,6 +2,12 @@
 
 GitScribe is a tool that uses AI to automatically generate titles and descriptions for Pull Requests based on commit messages. It streamlines the PR creation process, saving time and ensuring consistency in descriptions.
 
+## Preview
+![Captura de tela 2025-03-23 165423](https://github.com/user-attachments/assets/2260f644-b285-4d2b-8d02-39e79d50e1ff)
+
+![image](https://github.com/user-attachments/assets/17cc0803-3221-4f2d-8387-f0442c866be0)
+
+
 ## Project Structure
 
 The project is divided into two main directories:
