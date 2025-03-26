@@ -25,7 +25,7 @@ var markdown = "";
 function processRequest() {
     generateButton.disabled = true;
     generateButtonText.innerHTML = "Thinking";
-    fetch("https://cloudflare-works.andre-rodrigues0018.workers.dev/gemini/pr", {
+    fetch("http://127.0.0.1:8787/gemini/pr", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -35,19 +35,21 @@ function processRequest() {
     })
         .then((response) => response.json())
         .then((data) => {
-            if (data.markdown && data.title) {
+            console.log(data)
+            console.log(data.markdown)
+            if ( data.title && data.markdown) {
                 markdown = data.markdown;
                 const htmlContent = markdownToHtml(markdown);
                 commitsDescription.innerHTML = htmlContent;
                 commitsTitle.innerHTML = data.title;
-                generateButton.disabled = false;
-                generateButtonText.innerHTML = "Generate";
-                outputBlock.classList.add('active');
+                
             } else {
-                processRequest();
                 outputBlock.classList.remove('active');
 
             }
+            generateButton.disabled = false;
+            generateButtonText.innerHTML = "Generate";
+            outputBlock.classList.add('active');
         })
         .catch((error) => {
             console.error("Erro ao processar reqyest:", error);
@@ -123,7 +125,7 @@ function markdownToHtml(markdownText) {
 }
 
 function copyText(element) {
-    var textoParaCopiar = commitsDescription.textContent;
+    var textoParaCopiar = markdown;
     if (element == "titulo") {
         textoParaCopiar = commitsTitle.textContent;
     }
@@ -133,7 +135,7 @@ function copyText(element) {
     tempElem.select();
     document.execCommand("copy");
     document.body.removeChild(tempElem);
-    alert("Copy!");
+    alert("Copied successfully!");
 }
 
 function copyTitle() {
