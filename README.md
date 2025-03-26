@@ -9,13 +9,6 @@ The project is divided into two main directories:
 - **extension**: This directory organizes all files related to the Chrome extension that will be published on the Chrome Web Store.
 - **frontend**: This directory contains the web application that is rendered inside the extension through an iframe.
 
-## Installation
-
-To install the project dependencies, run:
-```bash
-npm install
-```
-
 ### Using the Extension in Chrome or Edge
 
 1. Open your browser and navigate to the extensions page:
