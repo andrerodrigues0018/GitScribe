@@ -14,6 +14,9 @@ const commitsDescription = document.querySelector('.commits-description');
 const boxOutputTitle = document.querySelector('.output-title');
 const boxOutputDescription = document.querySelector('.output-description');
 
+const outputBlock = document.querySelector('.output-block');
+
+
 generateButton.addEventListener('click', processRequest);
 buttonCopyCommits.addEventListener("click", getCommits);
 boxOutputTitle.addEventListener('click', copyTitle)
@@ -39,8 +42,11 @@ function processRequest() {
                 commitsTitle.innerHTML = data.title;
                 generateButton.disabled = false;
                 generateButtonText.innerHTML = "Generate";
+                outputBlock.classList.add('active');
             } else {
                 processRequest();
+                outputBlock.classList.remove('active');
+
             }
         })
         .catch((error) => {
@@ -127,6 +133,7 @@ function copyText(element) {
     tempElem.select();
     document.execCommand("copy");
     document.body.removeChild(tempElem);
+    alert("Copy!");
 }
 
 function copyTitle() {
